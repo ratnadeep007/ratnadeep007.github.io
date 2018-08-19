@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Back to JVM</title>
+  <meta property="og:title" content="Back to JVM" />
+  <meta name="twitter:title" content="Back to JVM" />
+  <meta name="description" content="Story or reasons why I am back to JVM after venturing through different programming languages.
+
+">
+  <meta property="og:description" content="Story or reasons why I am back to JVM after venturing through different programming languages.
+
+">
+  <meta name="twitter:description" content="Story or reasons why I am back to JVM after venturing through different programming languages.
+
+">
+  <meta name="author" content="Ratnadeep Bhattacharyya"/>
+  <meta name="twitter:card" content="summary" />
+  <meta property="og:url" content="/post/back-to-jvm/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Technophile Blog" />
+
+  <meta name="generator" content="Hugo 0.47" />
+  <link rel="canonical" href="/post/back-to-jvm/" />
+  <link rel="alternate" href="/index.xml" type="application/rss+xml" title="Technophile Blog">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" /><link rel="stylesheet" href="css/syntax.css" /><link rel="stylesheet" href="css/codeblock.css" />
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.css" integrity="sha384-h/L2W9KefUClHWaty3SLE5F/qvc4djlyR4qY3NUV5HGQBBW7stbcfff1+I/vmsHh" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.min.css" integrity="sha384-iD0dNku6PYSIQLyfTOpB06F2KCZJAKLOThS5HRe8b3ibhdEQ6eKsFf/EeFxdOt5R" crossorigin="anonymous">
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="">Technophile Blog</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Tags" href="/tags/">Tags</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="/about/">About</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              <h1>Back to JVM</h1>
+                
+                
+                  <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on August 19, 2018
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 5 minutes (958 words)
+  
+  
+</span>
+
+
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        <p>Story or reasons why I am back to JVM after venturing through different programming languages.</p>
+
+<p></p>
+
+<p>I am an avid programmer and like to try out every new programming languages and environments that comes out. I started programming when I was in class 5, that&rsquo;s around 2005 with my first programming language C. At that time I had no idea that my life will be this programming but I liked when computer first returned traditional &lsquo;Hello World&rsquo;.</p>
+
+<p>I had no idea what&rsquo;s dynamic and statically typed languages are but thanks to my computer teacher and my school which included computer as a subject I came to know about compilers and interpreters, i.e., approach to a problem in two different ways. If you don&rsquo;t know the difference it&rsquo;s simply as I was taught as a student of class 5, compiler converts whole source code into machine language in one go and interpreter does it line by line.</p>
+
+<blockquote>
+<p>Compiler converts whole source code in one go to machnine code while Interpreter does the same line by line.</p>
+</blockquote>
+
+<p>In class 8, that&rsquo;s around 2008 I came to know about Java not as course subject but a growing interest in programming. I can write code in Java but I had no idea why I am writing that long code which includes class name with accessors, methods (even I don&rsquo;t know what&rsquo;s difference between functions and methods), simply I had no idea about OOP (Object Oriented Programming) concept but as begineeer it was hard for me to do coding in java as there was no internet availible and only source of softwares I had was a friend with crappy BSNL connection and Digit magazine and environment setup was hectic for java.</p>
+
+<blockquote>
+<p>Statically typed languages are those in which programmer has to define type of variable when defining a new varibale like C, C++, Java etc.</p>
+</blockquote>
+
+<p>In class 11th, I opted for computer science as my fifth subject and there I was introduced to another programming language which I am still fond of C++ which introduced me to OOP concept even not being a strong OOP lanaguage and C++11 was released. There I learned about classes, objects, instances, polymorphism, encapsulation etc. but still Java was under my radar. From magazines and friends I came to know about frameworks and libraries used to make web applications (web backends) using Java and at end ot class 12 I was introduced to new world of programming that&rsquo;s dynamic languages.</p>
+
+<blockquote>
+<p>Dynamically typed languages are those in which programmer has not to define type of variable like Python, Ruby, Javascript etc</p>
+</blockquote>
+
+<p>I learned Python and it was cake walk for me to complete basics as I already know basics of 3 statically typed languages and I joined engineering in Computer Science and Engineering stream and my second dynamic language Ruby but my 3 old statically typed langauages are still under radar. I my second year of college I had high speed internet connection and suddenly a huge update in Java was released Java 8 and I came to know about &lsquo;JVM&rsquo; and it&rsquo;s internal working and second language to run on JVM and my third dynamic language, Groovy. By this time was hearing about a third JVM based language which was easy and interoperable with Java named Kotlin with another language named Scala which gaining popularity in field of machine learning.</p>
+
+<p>By this time, I got out of Java, I don&rsquo;t why but I didn&rsquo;t liked it by heart I was more into web development and dynamic languages like Python and Ruby seems promising to me with there frameworks like Django and Rails. I know Spring and Grails were availible but lost interest in Java and I had just written only hello world in Groovy. About Spring Framework,it was just a mess and too complicated to set up for me.</p>
+
+<p>2015 I was bed ridden and as having no work to do I just started reading articles, books and research paper related to computer science and I came across Node.JS. Node.JS is one of favourite and I think it will remain favourite for me for long time, it will take other article why. After venturing whole Node world in 2015 and 2016 I came across another statically typed language Go or Golang (for your knowledge framework I am using to write this blog using Golang) and suddenly news came in 2017, &lsquo;Kotlin is now first class citizen for Android Development&rsquo;. So, I thought it to try out and started developing apps in Kotlin in parallel to Javascript frameworks for mobile and Flutter.</p>
+
+<blockquote>
+<p>Flutter is a cross-platform mobile app development framework by Google which uses Dart programming language.</p>
+</blockquote>
+
+<p>I started gaining interest in Java again with functional programming languages which I am still trying to master basics, I started researching again about this language and I came to know that it came too far from where I left it, with Lambda expressions in Java 8 to REPL/JShell and modularity in Java 9. A huge improvement in startup time of JVM Hotspot and alternate options of JVM and native compilation of Java code. Biggest one for me was Spring Boot and Spring Cloud.</p>
+
+<blockquote>
+<p>Java and JVM is around 23 years old which means companies like Oracle/Sun, Google, Pivotal etc has invested last many years in developing and optimising this language with large support from companies like Netflix.</p>
+</blockquote>
+
+<p>At this moment I can say I am back to JVM not particularly Java but JVM with more core computer science knowledge and experince in working with different languages and appoarching same problem in different ways. I always had and will have a love-hate relationship with Java.</p>
+
+<p>More aricles to come related to my story and ventures in programming and this field I passionate about.</p>
+
+        
+          <div class="blog-tags">
+            
+              <a href="/tags/development/">Development</a>&nbsp;
+            
+              <a href="/tags/jvm/">JVM</a>&nbsp;
+            
+          </div>
+        
+
+        
+            <hr/>
+            <section id="social-share">
+              <ul class="list-inline footer-links">
+                
+
+
+<li>
+    <a href="//twitter.com/share?url=%2fpost%2fback-to-jvm%2f&amp;text=Back%20to%20JVM&amp;via="
+       target="_blank" alt="" title="Share on Twitter">
+        <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+              </span>
+    </a>
+</li>
+
+
+<li>
+    <a href="//plus.google.com/share?url=%2fpost%2fback-to-jvm%2f" target="_blank" title="Share on Google Plus">
+         <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+              </span>
+    </a>
+</li>
+
+
+<li>
+    <a href="//www.facebook.com/sharer/sharer.php?u=%2fpost%2fback-to-jvm%2f" target="_blank" title="Share on Facebook">
+        <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+              </span>
+    </a>
+</li>
+
+
+<li>
+    <a href="//reddit.com/submit?url=%2fpost%2fback-to-jvm%2f&amp;title=Back%20to%20JVM" target="_blank" title="Share on Reddit">
+         <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-reddit fa-stack-1x fa-inverse"></i>
+              </span>
+    </a>
+</li>
+
+
+<li>
+    <a href="//www.linkedin.com/shareArticle?url=%2fpost%2fback-to-jvm%2f&amp;title=Back%20to%20JVM" target="_blank"
+       title="Share on LinkedIn">
+         <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+              </span>
+    </a>
+</li>
+
+
+<li>
+    <a href="//www.stumbleupon.com/submit?url=%2fpost%2fback-to-jvm%2f&amp;title=Back%20to%20JVM" target="_blank"
+       title="Share on StumbleUpon">
+        <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-stumbleupon fa-stack-1x fa-inverse"></i>
+              </span>
+    </a>
+</li>
+
+
+<li>
+    <a href="//www.pinterest.com/pin/create/button/?url=%2fpost%2fback-to-jvm%2f&amp;description=Back%20to%20JVM" target="_blank"
+       title="Share on Pinterest">
+         <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-pinterest fa-stack-1x fa-inverse"></i>
+              </span>
+    </a>
+</li>
+
+              </ul>
+            </section>
+        
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+          
+        </ul>
+      
+
+
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:ratnadeepronnie@gmail.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/Ratnadeepthehacker" title="Facebook">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/ratndaeep007" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://gitlab.com/ratnadeep007" title="GitLab">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gitlab fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://linkedin.com/in/ratna2301" title="LinkedIn">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/b.ratna.deep" title="Instagram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              Ratnadeep Bhattacharyya
+            
+          
+
+          &nbsp;&bull;&nbsp;
+          2018
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="">Technophile Blog</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.47</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="js/main.js"></script><script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.js" integrity="sha384-QELNnmcmU8IR9ZAykt67vGr9/rZJdHbiWi64V88fCPaOohUlHCqUD/unNN0BXSqy" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe-ui-default.min.js" integrity="sha384-m67o7SkQ1ALzKZIFh4CiTA8tmadaujiTa9Vu+nqPSwDOqHrDmxLezTdFln8077+q" crossorigin="anonymous"></script>
+<script src="js/load-photoswipe.js"></script>
+
+
+
+
+
+
+  </body>
+</html>
+
