@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Technophile Blog</title>
-    <link>/</link>
+    <link>https://ratnadeep007.github.io/</link>
     <description>Recent content on Technophile Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
@@ -10,25 +10,25 @@
     <webMaster>ratnadeepronnie@gmail.com (Ratnadeep Bhattacharyya)</webMaster>
     <lastBuildDate>Sun, 19 Aug 2018 01:29:36 +0530</lastBuildDate>
     
-	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://ratnadeep007.github.io/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>About</title>
-      <link>/about/</link>
+      <link>https://ratnadeep007.github.io/about/</link>
       <pubDate>Sun, 19 Aug 2018 01:29:36 +0530</pubDate>
       <author>ratnadeepronnie@gmail.com (Ratnadeep Bhattacharyya)</author>
-      <guid>/about/</guid>
+      <guid>https://ratnadeep007.github.io/about/</guid>
       <description>Technophile (noun) a person who is enthusiatic about new technology.
 Ratnadeep Bhattacharyya is Computer Science and Engineering graduate presently working in Wipro Technologies as Project Engineer. He is technophile and loves open source. He is programming polyglot and passionate about computer science and related technologies.</description>
     </item>
     
     <item>
       <title>Back to JVM</title>
-      <link>/post/back-to-jvm/</link>
+      <link>https://ratnadeep007.github.io/post/back-to-jvm/</link>
       <pubDate>Sun, 19 Aug 2018 01:15:39 +0530</pubDate>
       <author>ratnadeepronnie@gmail.com (Ratnadeep Bhattacharyya)</author>
-      <guid>/post/back-to-jvm/</guid>
+      <guid>https://ratnadeep007.github.io/post/back-to-jvm/</guid>
       <description>&lt;p&gt;Story or reasons why I am back to JVM after venturing through different programming languages.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>

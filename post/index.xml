@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on Technophile Blog</title>
-    <link>/post/</link>
+    <link>https://ratnadeep007.github.io/post/</link>
     <description>Recent content in Posts on Technophile Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
@@ -10,15 +10,15 @@
     <webMaster>ratnadeepronnie@gmail.com (Ratnadeep Bhattacharyya)</webMaster>
     <lastBuildDate>Sun, 19 Aug 2018 01:15:39 +0530</lastBuildDate>
     
-	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://ratnadeep007.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Back to JVM</title>
-      <link>/post/back-to-jvm/</link>
+      <link>https://ratnadeep007.github.io/post/back-to-jvm/</link>
       <pubDate>Sun, 19 Aug 2018 01:15:39 +0530</pubDate>
       <author>ratnadeepronnie@gmail.com (Ratnadeep Bhattacharyya)</author>
-      <guid>/post/back-to-jvm/</guid>
+      <guid>https://ratnadeep007.github.io/post/back-to-jvm/</guid>
       <description>&lt;p&gt;Story or reasons why I am back to JVM after venturing through different programming languages.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
