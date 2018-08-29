@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Opensource on Technophile Blog</title>
-    <link>https://ratnadeep007.github.io/tags/opensource/</link>
-    <description>Recent content in Opensource on Technophile Blog</description>
+    <title>Machine Learning on Technophile Blog</title>
+    <link>https://ratnadeep007.github.io/tags/machine-learning/</link>
+    <description>Recent content in Machine Learning on Technophile Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <managingEditor>ratnadeepronnie@gmail.com (Ratnadeep Bhattacharyya)</managingEditor>
     <webMaster>ratnadeepronnie@gmail.com (Ratnadeep Bhattacharyya)</webMaster>
     <lastBuildDate>Wed, 29 Aug 2018 20:05:42 +0530</lastBuildDate>
     
-	<atom:link href="https://ratnadeep007.github.io/tags/opensource/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://ratnadeep007.github.io/tags/machine-learning/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -20,17 +20,6 @@
       <author>ratnadeepronnie@gmail.com (Ratnadeep Bhattacharyya)</author>
       <guid>https://ratnadeep007.github.io/post/opensource2/</guid>
       <description>&lt;p&gt;Second part of opensource technologies I love and work with.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>OpenSource = options and options - Part 1</title>
-      <link>https://ratnadeep007.github.io/post/opensource/</link>
-      <pubDate>Fri, 24 Aug 2018 21:54:14 +0530</pubDate>
-      <author>ratnadeepronnie@gmail.com (Ratnadeep Bhattacharyya)</author>
-      <guid>https://ratnadeep007.github.io/post/opensource/</guid>
-      <description>&lt;p&gt;Part 1 of my what I like in opensource and opensouce technologies I work with.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>
