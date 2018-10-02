@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Node.js - Why I love working in Node - Part 1</title>
+  <meta property="og:title" content="Node.js - Why I love working in Node - Part 1" />
+  <meta name="twitter:title" content="Node.js - Why I love working in Node - Part 1" />
+  <meta name="description" content="Here is a story how I fall in love with Node.js and why I love working with it.
+
+">
+  <meta property="og:description" content="Here is a story how I fall in love with Node.js and why I love working with it.
+
+">
+  <meta name="twitter:description" content="Here is a story how I fall in love with Node.js and why I love working with it.
+
+">
+  <meta name="author" content="Ratnadeep Bhattacharyya"/>
+  <meta name="twitter:card" content="summary" />
+  <meta property="og:url" content="https://ratnadeep007.github.io/post/nodejs/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Technophile Blog" />
+
+  <meta name="generator" content="Hugo 0.49" />
+  <link rel="canonical" href="https://ratnadeep007.github.io/post/nodejs/" />
+  <link rel="alternate" href="https://ratnadeep007.github.io/index.xml" type="application/rss+xml" title="Technophile Blog">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://ratnadeep007.github.io/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" /><link rel="stylesheet" href="https://ratnadeep007.github.io/css/syntax.css" /><link rel="stylesheet" href="https://ratnadeep007.github.io/css/codeblock.css" />
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.css" integrity="sha384-h/L2W9KefUClHWaty3SLE5F/qvc4djlyR4qY3NUV5HGQBBW7stbcfff1+I/vmsHh" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.min.css" integrity="sha384-iD0dNku6PYSIQLyfTOpB06F2KCZJAKLOThS5HRe8b3ibhdEQ6eKsFf/EeFxdOt5R" crossorigin="anonymous">
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-124224386-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="https://ratnadeep007.github.io/">Technophile Blog</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Tags" href="/tags/">Tags</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="/about/">About</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              <h1>Node.js - Why I love working in Node - Part 1</h1>
+                
+                
+                  <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 2, 2018
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 6 minutes (1144 words)
+  
+  
+</span>
+
+
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        <p>Here is a story how I fall in love with Node.js and why I love working with it.</p>
+
+<p></p>
+
+<p>If you don&rsquo;t know or new to Node.js let me tell you Node.js is not a programming language. It&rsquo;s a runtime environemnt for running javascript outside browser. If you never used javascript or learned about javascript via Node only then let me tell you that javascript was a only meant to run on browser. It was only way you can run a code in browser. I am telling this because there are new technologies like <em>WebAssembly</em> that also runs on browser but that the topic for different article. But now javascript is everywhere in server-side backend, IoT, Machine Learning etc also accompanied by easy learning curve being a dynamic language and Node.js is fast and evolving fast.</p>
+
+<p>Let us first of all look about Javascript and then move to Node.js.</p>
+
+<h2 id="javascript">Javascript</h2>
+
+<p>Javascript is a dynamic language and only way you can run your code in browser. It is mainly used to manipulate DOM (Data Object Model) in browser. DOM in simple terms a tree like representation of HTML elements. Also javascript it used to connect to servers to bring data to frontend using AJAX but now new fetch() API can be used which uses <em>promises</em>.</p>
+
+<blockquote>
+<p>If you know languages like C,C++,Java or Golang those are statically typed language where you have declared the data type of variable you want to declare and if you know languages like Python or Ruby those are dynamic where you don&rsquo;t have to declare type of variable interpreter determines it automatically.</p>
+</blockquote>
+
+<p>Javascript designed by <em>Brendan Eich</em> was released in year 1995 under name <strong>Mocha</strong> with Netscape Navigator and then later changed to <strong>Livescript</strong> in official release and then again changed name to <em>Javascript</em> when Netscape Navigator 2.0 was released. When I heard about Javascript I had a wrong knowledge that syntax would be like Java but later came to know name was intentionally kept as Javascript because at that time Java was the hot new language.</p>
+
+<p>Now it&rsquo;s 2018 and there is a international body named <strong>ECMA International</strong> that releases specifications for javascript named under <strong>ECAMScript</strong> for independent implementation. There latest release it ES9 or ECMAScript 9 which introduces spread parameters and some other features Javascript. ES6 is the version which introduced most of the featurs in Javascript like classes, modules, generators, typed arrays etc and the version with which I am most acquainted using. One the main feature of javascript is using Babel with which we can use new introduced features even if it not introduced by browser vendors in there Javascript engines.</p>
+
+<p>Javascript engine is used to run javascript source code inside browsers. It has it parsers, compilers, optimizers etc. Every browser vendor has it&rsquo;s own implementation of Javascript engine - <em>Google Chrome uses V8</em>, <em>Mozilla Firefox uses SpiderMonkey</em>, <em>Microsoft Edge uses ChakraCore</em> and <em>Apple Safari uses JavascriptCore</em>. Even though implementation is somewhat different in every engine but basic working is same and it follows as: parse, compile, optimize, execute. I am not going in detail in each step, if I go it will take it&rsquo;s own article to explain and how different engines implement it.</p>
+
+<p>Now with improvement in engines a javscript is the main driving force using Node.js for developer toolchain in frontend as industry moves towards Single Page Application (SPA) and Progressive Web App (PWA). In simple way to explain SPA, traditionally in web page when we click a link it takes us to a new HTML page in SPA there is a single HTML file the entry point and everything is managed by javascript where only element where all the contents will be displayed is there in HTML with basic HTML tags like head, title, meta etc which sometimes create problems for search engine crawlers. PWA is a emerging technology where a web app can be used as native mobile app which will be still running in web view with removed url bar and request is managed by a special javascript code called Service Worker which stores required data to display the page when network is not availible. These are simpler explanation of concepts in future artiles I will discuss them in more detail.</p>
+
+<h3 id="examples-of-javascript">Examples of Javascript</h3>
+
+<h4 id="printing-a-line">Printing a line</h4>
+
+<p><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;Hello World&#34;</span>)
+</code></pre></div>
+<em>Output</em>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">Hello World</code></pre></div></p>
+
+<h4 id="adding-two-numbers">Adding two numbers</h4>
+
+<p><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">x</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">y</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">x</span><span style="color:#f92672">+</span><span style="color:#a6e22e">y</span>)
+</code></pre></div>
+<em>Output</em>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#ae81ff">3</span></code></pre></div>
+Here you can see there is no type declaration</p>
+
+<h4 id="functions">Functions</h4>
+
+<p><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">add</span>(<span style="color:#a6e22e">x</span>,<span style="color:#a6e22e">y</span>) {
+  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">x</span><span style="color:#f92672">+</span><span style="color:#a6e22e">y</span>
+}
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">add</span>(<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">3</span>))
+</code></pre></div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">add</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">x</span>,<span style="color:#a6e22e">y</span>) {
+  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">x</span><span style="color:#f92672">+</span><span style="color:#a6e22e">y</span>
+}
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">add</span>(<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">3</span>))
+</code></pre></div>
+<em>Output</em>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#ae81ff">4</span></code></pre></div></p>
+
+<h4 id="functions-in-es6">Functions in ES6</h4>
+
+<p><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">add</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">x</span>,<span style="color:#a6e22e">y</span>) =&gt; {
+  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">x</span><span style="color:#f92672">+</span><span style="color:#a6e22e">y</span>
+}
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">add</span>(<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">3</span>))
+</code></pre></div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">add</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">x</span>,<span style="color:#a6e22e">y</span>) =&gt; <span style="color:#a6e22e">x</span><span style="color:#f92672">+</span><span style="color:#a6e22e">y</span>
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">add</span>(<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">3</span>))
+</code></pre></div>
+<em>Output</em>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#ae81ff">4</span></code></pre></div></p>
+
+<h4 id="dynamic-nature">Dynamic nature</h4>
+
+<p><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">x</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">x</span>)
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">x</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;name&#34;</span>
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">x</span>)
+</code></pre></div>
+<em>Output</em>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#ae81ff">1</span>
+name</code></pre></div></p>
+
+<h3 id="making-javascript-like-static-languages">Making Javascript like static languages</h3>
+
+<p>As you have seen in last example we can assign any value to any variable which is easy to code but creates problem when building large applications. This is the reason why many languages are there which can transpile to Javscript as it only language which can run on browsers. Languages are there like Typescript, Reason using Bucklescript, Purescript, Kotlin, Dart, Elm, Coffescript and many many others.</p>
+
+<p>Most popular among them is <strong>Typescript</strong> by Microsoft as superset of Javascript and many other features. Every javacript code is a valid typescript source code. Angular 2 and above uses typescript as default langauage due to it&rsquo;s rich features.</p>
+
+<p>Functional programming now days becoming popular and javascript is not far behind there is 2 implementation which I like is <strong>Reason using Bucklescript</strong> where Reason is by Facebook and Bucklescript was by Bloomberg but now is seperate entity which provides OCaml like syntax (more or less) and <strong>Purescript</strong> which is influced by Haskell as pure funtional languages. As a facebook product Reason is officially supported by React and React Native.</p>
+
+<p><strong>Dart</strong> is another programming language by Google which can run on servers using Dart VM, mobile application as Flutter is a Dart framework use to build cross platform apps and also in browser by transpiling to Javascript. In Dart everything is a object, any object is an instance of a class and objects can act as function too.</p>
+
+<p><strong>Kotlin</strong> is programming langauge which is developed by IntelliJ a company expert in building IDEs for technologies like IntelliJ IDEA, PyCharm etc. Langauge is develped to interoperable with Java and remove the verbose-ness of Java language and also to be null safe. Originally meant to run on JVM and transpile to Java but now native implementation is on it&rsquo;s way.</p>
+
+<p><strong>Elm</strong> is pure functional language which is great for replacement of frameworks or libraries like React and gives output in HTML, CSS and Javascript.</p>
+
+<p>Post is getting long. Ending it here and in next part we will directly jump to Node.js what is it, how it works and why it is important for me.</p>
+
+        
+          <div class="blog-tags">
+            
+              <a href="https://ratnadeep007.github.io//tags/web-development/">web development</a>&nbsp;
+            
+              <a href="https://ratnadeep007.github.io//tags/mobile-development/">mobile development</a>&nbsp;
+            
+              <a href="https://ratnadeep007.github.io//tags/frontend/">frontend</a>&nbsp;
+            
+              <a href="https://ratnadeep007.github.io//tags/backend/">backend</a>&nbsp;
+            
+          </div>
+        
+
+        
+            <hr/>
+            <section id="social-share">
+              <ul class="list-inline footer-links">
+                
+
+
+<li>
+    <a href="//twitter.com/share?url=https%3a%2f%2fratnadeep007.github.io%2fpost%2fnodejs%2f&amp;text=Node.js%20-%20Why%20I%20love%20working%20in%20Node%20-%20Part%201&amp;via="
+       target="_blank" alt="" title="Share on Twitter">
+        <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+              </span>
+    </a>
+</li>
+
+
+<li>
+    <a href="//plus.google.com/share?url=https%3a%2f%2fratnadeep007.github.io%2fpost%2fnodejs%2f" target="_blank" title="Share on Google Plus">
+         <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+              </span>
+    </a>
+</li>
+
+
+<li>
+    <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fratnadeep007.github.io%2fpost%2fnodejs%2f" target="_blank" title="Share on Facebook">
+        <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+              </span>
+    </a>
+</li>
+
+
+<li>
+    <a href="//reddit.com/submit?url=https%3a%2f%2fratnadeep007.github.io%2fpost%2fnodejs%2f&amp;title=Node.js%20-%20Why%20I%20love%20working%20in%20Node%20-%20Part%201" target="_blank" title="Share on Reddit">
+         <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-reddit fa-stack-1x fa-inverse"></i>
+              </span>
+    </a>
+</li>
+
+
+<li>
+    <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fratnadeep007.github.io%2fpost%2fnodejs%2f&amp;title=Node.js%20-%20Why%20I%20love%20working%20in%20Node%20-%20Part%201" target="_blank"
+       title="Share on LinkedIn">
+         <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+              </span>
+    </a>
+</li>
+
+
+<li>
+    <a href="//www.stumbleupon.com/submit?url=https%3a%2f%2fratnadeep007.github.io%2fpost%2fnodejs%2f&amp;title=Node.js%20-%20Why%20I%20love%20working%20in%20Node%20-%20Part%201" target="_blank"
+       title="Share on StumbleUpon">
+        <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-stumbleupon fa-stack-1x fa-inverse"></i>
+              </span>
+    </a>
+</li>
+
+
+<li>
+    <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fratnadeep007.github.io%2fpost%2fnodejs%2f&amp;description=Node.js%20-%20Why%20I%20love%20working%20in%20Node%20-%20Part%201" target="_blank"
+       title="Share on Pinterest">
+         <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-pinterest fa-stack-1x fa-inverse"></i>
+              </span>
+    </a>
+</li>
+
+              </ul>
+            </section>
+        
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="https://ratnadeep007.github.io/post/opensource2/" data-toggle="tooltip" data-placement="top" title="Opensource = options and options - Part 2">&larr; Previous Post</a>
+            </li>
+          
+          
+        </ul>
+      
+
+
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:ratnadeepronnie@gmail.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/Ratnadeepthehacker" title="Facebook">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/ratndaeep007" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://gitlab.com/ratnadeep007" title="GitLab">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gitlab fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://linkedin.com/in/ratna2301" title="LinkedIn">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/b.ratna.deep" title="Instagram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              Ratnadeep Bhattacharyya
+            
+          
+
+          &nbsp;&bull;&nbsp;
+          2018
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="https://ratnadeep007.github.io/">Technophile Blog</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.49</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://ratnadeep007.github.io/js/main.js"></script><script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.js" integrity="sha384-QELNnmcmU8IR9ZAykt67vGr9/rZJdHbiWi64V88fCPaOohUlHCqUD/unNN0BXSqy" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe-ui-default.min.js" integrity="sha384-m67o7SkQ1ALzKZIFh4CiTA8tmadaujiTa9Vu+nqPSwDOqHrDmxLezTdFln8077+q" crossorigin="anonymous"></script>
+<script src="https://ratnadeep007.github.io/js/load-photoswipe.js"></script>
+
+
+
+
+
+
+  </body>
+</html>
+

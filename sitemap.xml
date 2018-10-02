@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://ratnadeep007.github.io/post/nodejs/</loc>
+    <lastmod>2018-10-02T22:14:10+05:30</lastmod>
+  </url>
+  
+  <url>
     <loc>https://ratnadeep007.github.io/post/opensource2/</loc>
     <lastmod>2018-08-29T20:05:42+05:30</lastmod>
   </url>
@@ -24,7 +29,7 @@
   
   <url>
     <loc>https://ratnadeep007.github.io/tags/backend/</loc>
-    <lastmod>2018-08-24T21:54:14+05:30</lastmod>
+    <lastmod>2018-10-02T22:14:10+05:30</lastmod>
     <priority>0</priority>
   </url>
   
@@ -41,7 +46,7 @@
   
   <url>
     <loc>https://ratnadeep007.github.io/tags/frontend/</loc>
-    <lastmod>2018-08-24T21:54:14+05:30</lastmod>
+    <lastmod>2018-10-02T22:14:10+05:30</lastmod>
     <priority>0</priority>
   </url>
   
@@ -59,7 +64,7 @@
   
   <url>
     <loc>https://ratnadeep007.github.io/tags/mobile-development/</loc>
-    <lastmod>2018-08-29T20:05:42+05:30</lastmod>
+    <lastmod>2018-10-02T22:14:10+05:30</lastmod>
     <priority>0</priority>
   </url>
   
@@ -71,25 +76,25 @@
   
   <url>
     <loc>https://ratnadeep007.github.io/post/</loc>
-    <lastmod>2018-08-29T20:05:42+05:30</lastmod>
+    <lastmod>2018-10-02T22:14:10+05:30</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://ratnadeep007.github.io/tags/</loc>
-    <lastmod>2018-08-24T21:54:14+05:30</lastmod>
+    <lastmod>2018-10-02T22:14:10+05:30</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://ratnadeep007.github.io/</loc>
-    <lastmod>2018-08-29T20:05:42+05:30</lastmod>
+    <lastmod>2018-10-02T22:14:10+05:30</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://ratnadeep007.github.io/tags/web-development/</loc>
-    <lastmod>2018-08-24T21:54:14+05:30</lastmod>
+    <lastmod>2018-10-02T22:14:10+05:30</lastmod>
     <priority>0</priority>
   </url>
   
