@@ -8,10 +8,21 @@
     <language>en-us</language>
     <managingEditor>ratnadeepronnie@gmail.com (Ratnadeep Bhattacharyya)</managingEditor>
     <webMaster>ratnadeepronnie@gmail.com (Ratnadeep Bhattacharyya)</webMaster>
-    <lastBuildDate>Tue, 02 Oct 2018 22:14:10 +0530</lastBuildDate>
+    <lastBuildDate>Thu, 04 Oct 2018 11:04:19 +0530</lastBuildDate>
     
 	<atom:link href="https://ratnadeep007.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Orcale JDK 11 Not Free</title>
+      <link>https://ratnadeep007.github.io/post/orcale-jdk-not-free/</link>
+      <pubDate>Thu, 04 Oct 2018 11:04:19 +0530</pubDate>
+      <author>ratnadeepronnie@gmail.com (Ratnadeep Bhattacharyya)</author>
+      <guid>https://ratnadeep007.github.io/post/orcale-jdk-not-free/</guid>
+      <description>&lt;p&gt;Oracle&amp;rsquo;s JDK 11 is not free for use now. What have you done Oracle.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Node.js - Why I love working in Node - Part 1</title>

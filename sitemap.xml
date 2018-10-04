@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://ratnadeep007.github.io/post/orcale-jdk-not-free/</loc>
+    <lastmod>2018-10-04T11:04:19+05:30</lastmod>
+  </url>
+  
+  <url>
     <loc>https://ratnadeep007.github.io/post/nodejs/</loc>
     <lastmod>2018-10-02T22:14:10+05:30</lastmod>
   </url>
@@ -39,6 +44,12 @@
   </url>
   
   <url>
+    <loc>https://ratnadeep007.github.io/tags/developement/</loc>
+    <lastmod>2018-10-04T11:04:19+05:30</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://ratnadeep007.github.io/tags/development/</loc>
     <lastmod>2018-08-19T01:15:39+05:30</lastmod>
     <priority>0</priority>
@@ -47,6 +58,12 @@
   <url>
     <loc>https://ratnadeep007.github.io/tags/frontend/</loc>
     <lastmod>2018-10-02T22:14:10+05:30</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ratnadeep007.github.io/tags/java/</loc>
+    <lastmod>2018-10-04T11:04:19+05:30</lastmod>
     <priority>0</priority>
   </url>
   
@@ -70,13 +87,13 @@
   
   <url>
     <loc>https://ratnadeep007.github.io/tags/opensource/</loc>
-    <lastmod>2018-08-29T20:05:42+05:30</lastmod>
+    <lastmod>2018-10-04T11:04:19+05:30</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://ratnadeep007.github.io/post/</loc>
-    <lastmod>2018-10-02T22:14:10+05:30</lastmod>
+    <lastmod>2018-10-04T11:04:19+05:30</lastmod>
     <priority>0</priority>
   </url>
   
@@ -88,7 +105,7 @@
   
   <url>
     <loc>https://ratnadeep007.github.io/</loc>
-    <lastmod>2018-10-02T22:14:10+05:30</lastmod>
+    <lastmod>2018-10-04T11:04:19+05:30</lastmod>
     <priority>0</priority>
   </url>
   

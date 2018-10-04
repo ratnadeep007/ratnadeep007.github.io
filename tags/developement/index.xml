@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Developement on Technophile Blog</title>
+    <link>https://ratnadeep007.github.io/tags/developement/</link>
+    <description>Recent content in Developement on Technophile Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>ratnadeepronnie@gmail.com (Ratnadeep Bhattacharyya)</managingEditor>
+    <webMaster>ratnadeepronnie@gmail.com (Ratnadeep Bhattacharyya)</webMaster>
+    <lastBuildDate>Thu, 04 Oct 2018 11:04:19 +0530</lastBuildDate>
+    
+	<atom:link href="https://ratnadeep007.github.io/tags/developement/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Orcale JDK 11 Not Free</title>
+      <link>https://ratnadeep007.github.io/post/orcale-jdk-not-free/</link>
+      <pubDate>Thu, 04 Oct 2018 11:04:19 +0530</pubDate>
+      <author>ratnadeepronnie@gmail.com (Ratnadeep Bhattacharyya)</author>
+      <guid>https://ratnadeep007.github.io/post/orcale-jdk-not-free/</guid>
+      <description>&lt;p&gt;Oracle&amp;rsquo;s JDK 11 is not free for use now. What have you done Oracle.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
