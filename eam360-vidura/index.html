@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!--meta  http-equiv="Referrer-Policy"  content="no-referrer, strict-origin-when-cross-origin" /-->
+  <!--meta name="referrer" content="origin" /-->
+  <script src="https://d1fmfone96g0x2.cloudfront.net/tarka-chat-2.4.0.umd.js"></script>
+  <title>Ask Mai Chat Bot</title>
+  <style>
+    .container {
+      max-width: 800px;
+      margin: auto;
+      margin-top: 100px;
+    }
+  </style>
+</head>
+<body>
+  
+ 
+  <script>
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    const assetnum = urlParams.get('assetnum');
+    const siteid = urlParams.get('siteid');
+    document.getElementById("assetnum").value = assetnum;
+    document.getElementById("siteid").value = siteid;
+  </script>
+  <style>
+    body {
+      background-image: url('./vidura-hero.png');
+      background-repeat: no-repeat;
+      background-attachment: fixed; 
+      background-size: 100% 100%;
+    }
+    </style>
+  <div class="container">
+    <h1 style="color:rgb(253, 253, 253);">Welcome to Vidura Ask Mai</h1>
+    <p style="color:rgb(253, 253, 253);">
+      Click on the bottom right icon to Chat with Ask Mai.
+    </p>
+    <p style="color:rgb(253, 253, 253);">
+      Asset number is :<input id="assetnum" value="">
+    </p>
+    <p style="color:rgb(253, 253, 253);">
+      Site is : <input id="siteid" value="">
+    </p>
+  </div>
+  
+  <div id="chatbot"></div>
+  <script src="./vidura.js"></script>
+
+</body>
+</html>
