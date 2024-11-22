@@ -90,8 +90,8 @@ async function startSession(passkey) {
       method: "GET",
       headers: { 
         Authorization: "Bearer " + passkey,
-        
-     },
+      },
+      mode: "cors"
     });
     const data = await response.json();
     return data?.sessionId;
