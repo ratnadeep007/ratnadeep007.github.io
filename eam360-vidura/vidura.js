@@ -2,7 +2,8 @@
 const passkey = "$2a$10$2Cj3msXTk515hi7gT4CbEeUgWAuN2nq/WsM5bNVXoOehZzRfudaN2";
 let sessionId = undefined;
 // const SERVER_URL = "http://34.239.254.164:3000";
-const SERVER_URL = "http://demo.eam360.com:3000";
+// const SERVER_URL = "http://demo.eam360.com:3000";
+const SERVER_URL = "https://vidura.tarkalabs.com"
 const siloName = "EAM work history insights";
 
 TarkaChat.init({
